@@ -1,0 +1,49 @@
+<resources>
+    <string name="app_name">Yalantis1</string>
+    <string name="ticket_id">CE-1257218</string>
+    <string name="ticket_domain">Комунальне господарство</string>
+    <string name="ticket_status">В роботі</string>
+    <string name="ticket_description">
+        Открытый люк (возле рекламного щита), район поворота 18 и 19 трамваев на проспект Мира с
+        Донецкого шоссе
+    </string>
+
+    <string name="created_title">Створено</string>
+    <string name="created_date">25 лютого 2016</string>
+    <string name="registered_title">Зареєстровано</string>
+    <string name="registered_date">26 лютого 2016</string>
+    <string name="deadline_title">Вирішити до</string>
+    <string name="deadline_date">29 лютого 2016</string>
+    <string name="responsible_title">Відповідальний</string>
+    <string name="responsible_name">Дніпропетровський МВК()</string>
+    <string name="title_activity_main">MainActivity</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="action_settings">Settings</string>
+    <string name="navigation_header">e-contact</string>
+
+    <string name="login_prompt">Увійти в аккаунт</string>
+    <string name="all_tickets">Всі звернення</string>
+    <string name="tickets_on_map">Звернення на мапі</string>
+
+    <string-array name="ticket_domains">
+        <item>Комунальне господарство</item>
+        <item>Благоустрій та будівництво</item>
+        <item>Дороги</item>
+        <item>Дослідження космосу</item>
+        <item>Персональне збагачення заявника</item>
+        <item>Персональне збагачення виконавця</item>
+    </string-array>
+
+    <string-array name="ticket_states">
+        <item>В роботі</item>
+        <item>Виконано</item>
+        <item>Очікує</item>
+    </string-array>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+</resources>

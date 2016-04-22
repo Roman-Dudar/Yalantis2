@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Yalantis1</string>
+    <string name="ticket_id">CE-1257218</string>
+    <string name="ticket_domain">Municipal property</string>
+    <string name="ticket_status">In process</string>
+    <string name="ticket_description">
+        Something bad happened somewhere, need to fix that stuff ASAP, pls look images for details.
+    </string>
+
+    <string name="created_title">Created</string>
+    <string name="created_date">25 FEB 2016</string>
+    <string name="registered_title">Registered</string>
+    <string name="registered_date">26 FEB 2016</string>
+    <string name="deadline_title">Due date</string>
+    <string name="deadline_date">29 FEB 2016</string>
+    <string name="responsible_title">Assignee</string>
+    <string name="responsible_name">CEC of Dnipropetrivsk</string>
+
+    <string name="all_tickets">Всі звернення</string>
+    <string name="tickets_on_map">Звернення на мапі</string>
+
+    <string-array name="ticket_states">
+        <item>Active</item>
+        <item>Completed</item>
+        <item>Awaiting</item>
+    </string-array>
+
+</resources>

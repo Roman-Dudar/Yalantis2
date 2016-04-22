@@ -1,0 +1,128 @@
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:showIn="@layout/activity_ticket_details"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="org.dudar.roman.yalantis2.TicketDetailsActivity">
+
+    <GridLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:clipToPadding="false"
+        android:columnCount="2"
+        android:focusableInTouchMode="true"
+        android:padding="@dimen/viewGroup_padding">
+
+        <TextView
+            style="@style/Title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_columnSpan="2"
+            android:text="@string/ticket_domain"/>
+
+        <TextView
+            style="@style/BaseText.White"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_columnSpan="2"
+            android:background="@drawable/rounded_view"
+            android:text="@string/ticket_status"/>
+
+        <View
+            style="@style/Divider"
+            android:layout_columnSpan="2"/>
+
+        <TextView
+            style="@style/BaseText.Gray"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="left"
+            android:text="@string/created_title"/>
+
+        <TextView
+            style="@style/BaseText.Black"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right"
+            android:text="@string/created_date"/>
+
+        <View
+            style="@style/Divider"
+            android:layout_columnSpan="2"/>
+
+        <TextView
+            style="@style/BaseText.Gray"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="left"
+            android:text="@string/registered_title"/>
+
+        <TextView
+            style="@style/BaseText.Black"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right"
+            android:text="@string/registered_date"/>
+
+        <View
+            style="@style/Divider"
+            android:layout_columnSpan="2"/>
+
+        <TextView
+            style="@style/BaseText.Gray"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="left"
+            android:text="@string/deadline_title"/>
+
+        <TextView
+            style="@style/BaseText.Black"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right"
+            android:text="@string/deadline_date"/>
+
+        <View
+            style="@style/Divider"
+            android:layout_columnSpan="2"/>
+
+        <TextView
+            style="@style/BaseText.Gray"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="left"
+            android:text="@string/responsible_title"/>
+
+        <TextView
+            style="@style/BaseText.Black"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right"
+            android:text="@string/responsible_name"/>
+
+        <View
+            style="@style/Divider"
+            android:layout_columnSpan="2"/>
+
+        <TextView
+            style="@style/BaseText.Black"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_columnSpan="2"
+            android:text="@string/ticket_description"/>
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/images_recycler"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/image_height"
+            android:layout_columnSpan="2"
+            android:gravity="center_vertical"
+            android:overScrollMode="never"
+            android:scrollbars="horizontal"/>
+
+    </GridLayout>
+
+</ScrollView>

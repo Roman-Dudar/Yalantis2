@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group
+        android:id="@+id/general_options"
+        android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_camera"
+            android:icon="@drawable/ic_1"
+            android:title="@string/all_tickets"/>
+        <item
+            android:icon="@drawable/ic_2"
+            android:title="@string/tickets_on_map"/>
+    </group>
+
+    <group
+        android:checkableBehavior="single">
+        <item
+            android:id="@+id/login_option"
+            android:title="@string/login_prompt"/>
+    </group>
+
+</menu>

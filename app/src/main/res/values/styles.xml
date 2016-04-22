@@ -1,0 +1,82 @@
+<resources
+    xmlns:tools="http://schemas.android.com/tools" xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+
+        <item name="android:windowBackground">@color/shady_white</item>
+    </style>
+
+    <style name="AppTheme.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar"/>
+    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light"/>
+
+
+    <style name="AppTheme.View">
+        <item name="android:onClick">onViewClick</item>
+    </style>
+
+    <style name="Divider" parent="AppTheme.View">
+        <item name="android:layout_height">@dimen/divider_height</item>
+        <item name="android:background">@color/light_gray</item>
+        <item name="android:layout_marginTop">@dimen/view_margin_top</item>
+        <item name="android:layout_marginBottom">@dimen/view_margin_bottom</item>
+    </style>
+
+    <style name="DividerVertical">
+        <item name="android:layout_width">@dimen/divider_height</item>
+        <item name="android:background">@color/light_gray</item>
+        <item name="android:layout_marginLeft">@dimen/view_margin_top</item>
+        <item name="android:layout_marginRight">@dimen/view_margin_bottom</item>
+    </style>
+
+    <style name="AppTheme.ImageView" parent="AppTheme.View">
+        <item name="android:layout_marginTop">@dimen/view_margin_top</item>
+        <item name="android:layout_marginRight">@dimen/view_margin_right</item>
+        <item name="android:layout_width">@dimen/image_width</item>
+        <item name="android:layout_height">@dimen/image_height</item>
+    </style>
+
+    <!-- Text styles -->
+    <style name="BaseText" parent="AppTheme.View">
+        <item name="android:textSize">@dimen/base_text</item>
+    </style>
+
+    <style name="BaseText.Black" parent="BaseText">
+        <item name="android:textColor">@color/black</item>
+    </style>
+
+    <style name="Title" parent="BaseText.Black">
+        <item name="android:textSize">@dimen/title_text</item>
+        <item name="android:layout_marginBottom">@dimen/view_margin_bottom</item>
+    </style>
+
+    <style name="BaseText.White" parent="BaseText">
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="BaseText.Gray" parent="BaseText">
+        <item name="android:textColor">@color/dark_gray</item>
+    </style>
+
+    <style name="NavHeaderTitle">
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">@dimen/nav_header_text_size</item>
+    </style>
+
+    <style name="NavHeaderLayout">
+        <item name="android:layout_height">@dimen/nav_header_height</item>
+        <item name="android:background">@color/colorPrimary</item>
+        <item name="android:gravity">left|bottom</item>
+    </style>
+
+
+</resources>

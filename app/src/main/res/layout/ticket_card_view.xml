@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView
+    android:id="@+id/ticket_card_view"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="120dp"
+    android:orientation="vertical"
+    card_view:cardCornerRadius="8dp"
+    android:layout_margin="16dp">
+
+    <GridLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:columnCount="4"
+        android:rowCount="4"
+        android:layout_margin="16dp">
+
+
+        <ImageView
+            android:id="@+id/domain_icon"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:scaleType="centerInside"
+            android:src="@drawable/ic_public_property"
+            android:tint="#757575"
+            android:layout_columnWeight="1"
+            android:layout_gravity="center"/>
+
+        <View
+            style="@style/DividerVertical"
+            android:layout_height="match_parent"
+            android:layout_rowSpan="4"/>
+
+
+        <TextView
+            android:id="@+id/domain_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_columnSpan="2"
+            android:layout_gravity="left|center_vertical"
+            android:text="bad"
+            android:textSize="14sp"
+            android:layout_columnWeight="2"
+            android:textColor="@color/black"/>
+
+        <Space android:layout_rowWeight="1"/>
+        <Space/>
+        <Space/>
+
+
+
+        <TextView
+            android:id="@+id/address_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_columnSpan="2"
+            android:layout_gravity="left|bottom"
+            android:text="balbalbalsadasdsad sad asd s dasd"
+            android:textSize="12sp"
+            android:layout_columnWeight="2"/>
+
+        <TextView
+            android:id="@+id/likes_count"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="  1"
+            android:textSize="24sp"
+            android:drawableLeft="@drawable/ic_like"
+            android:drawableTint="#757575"
+            android:layout_columnWeight="1"
+            android:layout_gravity="bottom|center_horizontal"/>
+
+        <TextView
+            android:id="@+id/registered_date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="left|bottom"
+            android:text="23 NOV 2016"
+            android:textSize="12sp"
+            android:layout_columnWeight="2"
+            android:textStyle="bold"/>
+
+        <TextView
+            android:id="@+id/days_left"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right|bottom"
+            android:text="6 days"
+            android:textSize="12sp"
+            android:layout_columnWeight="1"
+            android:textStyle="bold"/>
+
+
+    </GridLayout>
+
+</android.support.v7.widget.CardView>
