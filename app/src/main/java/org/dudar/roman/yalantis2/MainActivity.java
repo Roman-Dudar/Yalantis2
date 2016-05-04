@@ -25,7 +25,7 @@ public class MainActivity extends AppCompatActivity
     private TabLayout mTabs;
     private ViewPager mTabContainer;
     private AppBarLayout mAppBarLayout;
-    private FloatingActionButton fab;
+    private FloatingActionButton mFab;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,8 +43,8 @@ public class MainActivity extends AppCompatActivity
 
         setTitle(getString(R.string.all_tickets));
 
-        fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
+        mFab = (FloatingActionButton) findViewById(R.id.fab);
+        mFab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
@@ -121,15 +121,15 @@ public class MainActivity extends AppCompatActivity
 
     @Override
     public void showFab() {
-        if (fab != null) {
-            fab.show();
+        if (mFab != null) {
+            mFab.show();
         }
     }
 
     @Override
     public void hideFab() {
-        if (fab != null) {
-            fab.hide();
+        if (mFab != null) {
+            mFab.hide();
         }
     }
 }
