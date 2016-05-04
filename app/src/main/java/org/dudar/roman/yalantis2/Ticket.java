@@ -5,14 +5,41 @@ import android.graphics.drawable.Drawable;
 import android.support.v4.content.ContextCompat;
 import android.text.format.DateFormat;
 
+import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
+import java.util.List;
 
 /**
  * Created by Roman on 24.03.2016.
  */
 public class Ticket {
 
+    protected static final Ticket[] ALL_TICKETS = {
+        new Ticket("CE-123124", 0, 0, "Ой-ой-ой как все плохо", "Где-то в космосе"),
+            new Ticket("CE-456747", 1, 0, "Ой-ой-ой как все плохо", "Где-то в космосе"),
+            new Ticket("CE-234234", 1, 1, "Ой-ой-ой как все плохо", "Где-то в космосе"),
+            new Ticket("CE-348944", 0, 1, "Ой-ой-ой как все плохо", "Где-то в космосе"),
+            new Ticket("CE-567774", 2, 1, "Ой-ой-ой как все плохо", "Где-то в космосе"),
+        new Ticket("CE-995434", 0, 0, "Ой-ой-ой как все плохо", "Где-то в космосе"),
+            new Ticket("CE-156432", 0, 1, "Ой-ой-ой как все плохо", "Где-то в космосе"),
+            new Ticket("CE-075321", 1, 1, "Ой-ой-ой как все плохо", "Где-то в космосе"),
+            new Ticket("CE-546787", 0, 2, "Ой-ой-ой как все плохо", "Где-то в космосе"),
+            new Ticket("CE-546789", 2, 1, "Ой-ой-ой как все плохо", "Где-то в космосе"),
+            new Ticket("CE-546747", 0, 2, "Ой-ой-ой как все плохо", "Где-то в космосе"),
+            new Ticket("CE-556587", 2, 2, "Ой-ой-ой как все плохо", "Где-то в космосе"),
+            new Ticket("CE-546887", 0, 2, "Ой-ой-ой как все плохо", "Где-то в космосе"),
+            new Ticket("CE-546785", 0, 1, "Ой-ой-ой как все плохо", "Где-то в космосе"),
+            new Ticket("CE-243549", 2, 1, "Ой-ой-ой как все плохо", "Где-то в космосе")
+    };
+    protected static final int[] IMAGES_IDS = {
+            R.drawable.v, R.drawable.c, R.drawable.d, R.drawable.b
+    };
+    private static final int[] DOMAINS_ICONS = {
+            R.drawable.ic_public_property, R.drawable.ic_public_property,
+            R.drawable.ic_public_property, R.drawable.ic_public_property,
+            R.drawable.ic_public_property, R.drawable.ic_public_property
+    };
     private String mId;
     private int mDomainId;
     private int mStatus;
@@ -23,29 +50,6 @@ public class Ticket {
     private int mLikesCount;
     private String mAddress;
 
-    protected static final Ticket[] ALL_TICKETS = {
-        new Ticket("CE-123124", 0, 0, "Ой-ой-ой как все плохо", "Где-то в космосе"),
-        new Ticket("CE-456747", 0, 0, "Ой-ой-ой как все плохо", "Где-то в космосе"),
-        new Ticket("CE-234234", 0, 0, "Ой-ой-ой как все плохо", "Где-то в космосе"),
-        new Ticket("CE-348944", 0, 0, "Ой-ой-ой как все плохо", "Где-то в космосе"),
-        new Ticket("CE-567774", 0, 0, "Ой-ой-ой как все плохо", "Где-то в космосе"),
-        new Ticket("CE-995434", 0, 0, "Ой-ой-ой как все плохо", "Где-то в космосе"),
-        new Ticket("CE-156432", 0, 0, "Ой-ой-ой как все плохо", "Где-то в космосе"),
-        new Ticket("CE-075321", 0, 0, "Ой-ой-ой как все плохо", "Где-то в космосе"),
-        new Ticket("CE-546787", 0, 0, "Ой-ой-ой как все плохо", "Где-то в космосе"),
-        new Ticket("CE-243669", 0, 0, "Ой-ой-ой как все плохо", "Где-то в космосе")
-    };
-
-    protected static final int[] IMAGES_IDS = {
-            R.drawable.v, R.drawable.c, R.drawable.d, R.drawable.b
-    };
-
-    private static final int[] DOMAINS_ICONS = {
-            R.drawable.ic_public_property, R.drawable.ic_public_property,
-            R.drawable.ic_public_property, R.drawable.ic_public_property,
-            R.drawable.ic_public_property, R.drawable.ic_public_property
-    };
-
     private Ticket(String mId, int mDomainId, int mStatus, String mDescription, String mAddress) {
         this.mId = mId;
         this.mDomainId = mDomainId;
@@ -53,44 +57,12 @@ public class Ticket {
         this.mDescription = mDescription;
         this.mAddress = mAddress;
         mAssignee = "Как обычно";
-        mLikesCount = 10;
+        mLikesCount = 21;
 
         long dayMs = 24 * 60 * 60 * 1000;
         Date today = new Date();
         mRegistrationDate = today;
         mDeadline = new Date(today.getTime() + (5 * dayMs));
-    }
-
-
-    protected String getDomain(Context context){
-        String[] allDomains = context.getResources().getStringArray(R.array.ticket_domains);
-        return allDomains[mDomainId];
-    }
-
-    protected Drawable getDomainIcon(Context context) {
-        Drawable domainIcon = ContextCompat.getDrawable(context, DOMAINS_ICONS[mDomainId]);
-        return domainIcon;
-    }
-
-    protected String getAddress(){
-        return mAddress;
-    }
-
-    protected String getDeadline(Context context) {
-        return DateFormat.getMediumDateFormat(context).format(mDeadline);
-    }
-
-    protected String getRegistrationDate(Context context) {
-        return DateFormat.getMediumDateFormat(context).format(mRegistrationDate);
-    }
-
-    protected int getDaysLeft() {
-        if (mStatus == 1) throw new RuntimeException("Called getDaysLeft() for closed Ticket");
-        return daysBetween(new Date(), mDeadline);
-    }
-
-    protected int getLikesCount() {
-        return mLikesCount;
     }
 
     private static final int daysBetween(Date date1, Date date2) {
@@ -125,5 +97,63 @@ public class Ticket {
         return daysBetween;
     }
 
+    public static List<Ticket> getFilteredTickets(int filter) {
+        ArrayList<Ticket> filteredTickets = new ArrayList<>();
+        for (int i = 0; i < ALL_TICKETS.length; i++) {
+            if (ALL_TICKETS[i].getStatus() == filter) filteredTickets.add(ALL_TICKETS[i]);
+        }
 
+        return filteredTickets;
+    }
+
+    public static final Ticket getById(String ticketId) {
+        for (Ticket currentTicket : ALL_TICKETS) {
+            if (currentTicket.getId().equals(ticketId)) return currentTicket;
+        }
+        return null;
+    }
+
+    protected String getId() {
+        return mId;
+    }
+
+    protected String getDomain(Context context) {
+        String[] allDomains = context.getResources().getStringArray(R.array.ticket_domains);
+        return allDomains[mDomainId];
+    }
+
+    protected String getStatusString(Context context) {
+        String[] allStatuses = context.getResources().getStringArray(R.array.ticket_states);
+        return allStatuses[mStatus];
+    }
+
+    protected Drawable getDomainIcon(Context context) {
+        Drawable domainIcon = ContextCompat.getDrawable(context, DOMAINS_ICONS[mDomainId]);
+        return domainIcon;
+    }
+
+    protected String getAddress() {
+        return mAddress;
+    }
+
+    protected String getDeadline(Context context) {
+        return DateFormat.getMediumDateFormat(context).format(mDeadline);
+    }
+
+    protected String getRegistrationDate(Context context) {
+        return DateFormat.getMediumDateFormat(context).format(mRegistrationDate);
+    }
+
+    protected int getDaysLeft() {
+        if (mStatus == 2) throw new RuntimeException("Called getDaysLeft() for closed Ticket");
+        return daysBetween(new Date(), mDeadline);
+    }
+
+    protected int getStatus() {
+        return mStatus;
+    }
+
+    protected int getLikesCount() {
+        return mLikesCount;
+    }
 }

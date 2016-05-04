@@ -4,10 +4,10 @@ import android.content.Context;
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
+import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
-
 
 import java.util.List;
 
@@ -17,12 +17,47 @@ import java.util.List;
 public class TicketCardsAdapter extends RecyclerView.Adapter<TicketCardsAdapter.CardViewHolder> {
 
     private List<Ticket> mTickets;
+    private View.OnClickListener mOnClickListener;
 
-    public TicketCardsAdapter(List<Ticket> tickets) {
+    public TicketCardsAdapter(List<Ticket> tickets, View.OnClickListener listener) {
         this.mTickets = tickets;
+        this.mOnClickListener = listener;
     }
 
-    public class CardViewHolder extends RecyclerView.ViewHolder {
+    @Override
+    public CardViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+        LayoutInflater inflater = LayoutInflater.from(parent.getContext());
+        CardView cardView = (CardView) inflater.inflate(R.layout.ticket_card_view, parent, false);
+        return new CardViewHolder(cardView);
+    }
+
+    @Override
+    public void onBindViewHolder(CardViewHolder cardHolder, int position) {
+        final Ticket ticket = mTickets.get(position);
+        Context context = cardHolder.cardView.getContext();
+
+        cardHolder.domainIcon.setImageDrawable(ticket.getDomainIcon(context));
+        cardHolder.domainText.setText(ticket.getDomain(context));
+        cardHolder.addressText.setText(ticket.getAddress());
+        cardHolder.likesCount.setText(String.valueOf(ticket.getLikesCount()));
+        cardHolder.registeredDate.setText(ticket.getRegistrationDate(context));
+        cardHolder.daysLeft.setText(String.valueOf(ticket.getDaysLeft()) + " днів");
+
+        cardHolder.cardView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                v.setTag(TicketsFragment.TICKET_ID_TAG_KEY, ticket.getId());
+                mOnClickListener.onClick(v);
+            }
+        });
+    }
+
+    @Override
+    public int getItemCount() {
+        return mTickets.size();
+    }
+
+    protected class CardViewHolder extends RecyclerView.ViewHolder {
         private CardView cardView;
 
         private ImageView domainIcon;
@@ -43,31 +78,6 @@ public class TicketCardsAdapter extends RecyclerView.Adapter<TicketCardsAdapter.
             registeredDate = (TextView) cardView.findViewById(R.id.registered_date);
             daysLeft = (TextView) cardView.findViewById(R.id.days_left);
         }
-    }
-
-    @Override
-    public CardViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        LayoutInflater inflater = LayoutInflater.from(parent.getContext());
-        CardView cardView = (CardView) inflater.inflate(R.layout.ticket_card_view, parent, false);
-        return new CardViewHolder(cardView);
-    }
-
-    @Override
-    public void onBindViewHolder(CardViewHolder cardHolder, int position) {
-        Ticket ticket = mTickets.get(position);
-        Context context = cardHolder.cardView.getContext();
-
-        cardHolder.domainIcon.setImageDrawable(ticket.getDomainIcon(context));
-        cardHolder.domainText.setText(ticket.getDomain(context));
-        cardHolder.addressText.setText(ticket.getAddress());
-        cardHolder.likesCount.setText(String.valueOf(ticket.getLikesCount()));
-        cardHolder.registeredDate.setText(ticket.getRegistrationDate(context));
-        cardHolder.daysLeft.setText(String.valueOf(ticket.getDaysLeft()) + " днів");
-    }
-
-    @Override
-    public int getItemCount() {
-        return mTickets.size();
     }
 
 }

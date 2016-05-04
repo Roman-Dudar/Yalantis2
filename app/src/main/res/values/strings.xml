@@ -37,13 +37,11 @@
         <item>Персональне збагачення виконавця</item>
     </string-array>
 
+    <!-- Position of item in array matters! It is tied to the status code in Ticket object -->
     <string-array name="ticket_states">
         <item>В роботі</item>
         <item>Виконано</item>
         <item>Очікує</item>
     </string-array>
-
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
 
 </resources>

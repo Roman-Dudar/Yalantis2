@@ -4,32 +4,32 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:card_view="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="120dp"
-    android:orientation="vertical"
-    card_view:cardCornerRadius="8dp"
-    android:layout_margin="16dp">
+    android:layout_height="@dimen/ticket_card_size"
+    android:layout_marginLeft="@dimen/default_margin"
+    android:layout_marginRight="@dimen/default_margin"
+    android:layout_marginTop="@dimen/default_margin"
+    card_view:cardCornerRadius="@dimen/card_corners">
 
     <GridLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:columnCount="4"
-        android:rowCount="4"
-        android:layout_margin="16dp">
+        android:rowCount="4">
 
 
         <ImageView
             android:id="@+id/domain_icon"
-            android:layout_width="24dp"
-            android:layout_height="24dp"
-            android:scaleType="centerInside"
+            android:layout_width="@dimen/icon_size"
+            android:layout_height="@dimen/icon_size"
+            android:layout_gravity="center"
+            android:layout_marginTop="@dimen/default_margin_double"
             android:src="@drawable/ic_public_property"
-            android:tint="#757575"
-            android:layout_columnWeight="1"
-            android:layout_gravity="center"/>
+            android:tint="#757575"/>
 
         <View
             style="@style/DividerVertical"
             android:layout_height="match_parent"
+            android:layout_marginRight="@dimen/default_margin_double"
             android:layout_rowSpan="4"/>
 
 
@@ -38,16 +38,14 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_columnSpan="2"
-            android:layout_gravity="left|center_vertical"
+            android:layout_gravity="start|center_vertical"
+            android:paddingTop="@dimen/default_margin_double"
             android:text="bad"
-            android:textSize="14sp"
-            android:layout_columnWeight="2"
-            android:textColor="@color/black"/>
+            android:textColor="@color/black"
+            android:textSize="@dimen/card_title"/>
 
-        <Space android:layout_rowWeight="1"/>
-        <Space/>
-        <Space/>
 
+        <Space/>
 
 
         <TextView
@@ -57,28 +55,28 @@
             android:layout_columnSpan="2"
             android:layout_gravity="left|bottom"
             android:text="balbalbalsadasdsad sad asd s dasd"
-            android:textSize="12sp"
-            android:layout_columnWeight="2"/>
+            android:textSize="@dimen/card_text"/>
 
         <TextView
             android:id="@+id/likes_count"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="  1"
-            android:textSize="24sp"
+            android:layout_gravity="bottom|center_horizontal"
             android:drawableLeft="@drawable/ic_like"
-            android:drawableTint="#757575"
-            android:layout_columnWeight="1"
-            android:layout_gravity="bottom|center_horizontal"/>
+            android:drawablePadding="@dimen/default_margin"
+            android:drawableTint="@color/gray"
+            android:padding="@dimen/default_margin_double"
+            android:text="1"
+            android:textSize="@dimen/card_text"/>
 
         <TextView
             android:id="@+id/registered_date"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="left|bottom"
+            android:paddingBottom="@dimen/default_margin_double"
             android:text="23 NOV 2016"
-            android:textSize="12sp"
-            android:layout_columnWeight="2"
+            android:textSize="@dimen/card_text"
             android:textStyle="bold"/>
 
         <TextView
@@ -86,9 +84,10 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="right|bottom"
-            android:text="6 days"
-            android:textSize="12sp"
-            android:layout_columnWeight="1"
+            android:paddingBottom="@dimen/default_margin_double"
+            android:paddingRight="@dimen/default_margin_double"
+            android:text="days"
+            android:textSize="@dimen/card_text"
             android:textStyle="bold"/>
 
 

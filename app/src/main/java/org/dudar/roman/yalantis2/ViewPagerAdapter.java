@@ -5,10 +5,12 @@ import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 
 
+
 /**
  * Created by Roman on 22.04.2016.
  */
 class ViewPagerAdapter extends FragmentPagerAdapter {
+    protected static final int LIST_VIEW_PAGE = 2; //count starts at 0
     private String[] mPageTitles;
 
     public ViewPagerAdapter(FragmentManager manager, String[] pageTitles) {

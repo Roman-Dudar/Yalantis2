@@ -5,11 +5,11 @@
         android:id="@+id/general_options"
         android:checkableBehavior="single">
         <item
-            android:id="@+id/nav_camera"
-            android:icon="@drawable/ic_1"
+            android:id="@+id/nav_all_tickets"
+            android:icon="@drawable/ic_all_tickets"
             android:title="@string/all_tickets"/>
         <item
-            android:icon="@drawable/ic_2"
+            android:icon="@drawable/ic_map"
             android:title="@string/tickets_on_map"/>
     </group>
 

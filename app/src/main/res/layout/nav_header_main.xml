@@ -10,8 +10,6 @@
         style="@style/NavHeaderTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:paddingBottom="24dp"
-        android:paddingLeft="16dp"
         android:text="@string/navigation_header"/>
 
 </LinearLayout>

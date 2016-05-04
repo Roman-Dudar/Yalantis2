@@ -14,7 +14,6 @@
     <color name="white">#FFFFFF</color>
     <color name="black">#000000</color>
 
-    <color name="gradient_center">#46B3C3</color>
-    <color name="gradient_end">#5598BB</color>
+    <color name="gradient_center">#45B3C3</color>
 
 </resources>
